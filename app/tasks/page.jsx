@@ -1,6 +1,7 @@
 import React from "react";
 import TaskForm from "./_components/TaskForm";
 import TaskList from "./_components/TaskList";
+import TaskFormCustom from "./_components/TaskFormCustom";
 
 export default function TasksPage() {
   return (
@@ -9,7 +10,7 @@ export default function TasksPage() {
       <hr className="my-8" />
 
       <div>
-        <TaskForm />
+        <TaskFormCustom />
         <TaskList />
       </div>
     </div>
