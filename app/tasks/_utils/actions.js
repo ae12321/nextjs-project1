@@ -2,6 +2,7 @@
 
 import prisma from "@/utils/db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const getTasks = async () => {
   return prisma.task.findMany({
@@ -25,4 +26,22 @@ export const deleteTask = async (formData) => {
     where: { id },
   });
   revalidatePath("/tasks");
+};
+
+export const getTask = async (id) => {
+  return prisma.task.findUnique({
+    where: { id },
+  });
+};
+export const editTask = async (formData) => {
+  const id = formData.get("id");
+  const content = formData.get("content");
+  const completed = formData.get("completed") === "on";
+  //   console.log({ id, content, completed });
+  //   console.log(formData);
+  await prisma.task.update({
+    where: { id },
+    data: { content, completed },
+  });
+  redirect("/tasks");
 };

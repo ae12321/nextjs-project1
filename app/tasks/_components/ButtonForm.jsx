@@ -1,5 +1,6 @@
 import React from "react";
 import { deleteTask } from "../_utils/actions";
+import Link from "next/link";
 
 function DeleteButton({ id }) {
   return (
@@ -9,8 +10,12 @@ function DeleteButton({ id }) {
     </form>
   );
 }
-function EditButton() {
-  return <button className="btn btn-info btn-sm">edit</button>;
+function EditButton({ id }) {
+  return (
+    <Link href={`/tasks/${id}`} className="btn btn-info btn-sm">
+      edit
+    </Link>
+  );
 }
 
 export default function ButtonForm({ id }) {
