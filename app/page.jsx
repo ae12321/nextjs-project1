@@ -11,7 +11,7 @@ export default function HomePage() {
       <Link href="/help" className="text-xl">
         help page
       </Link>
-      <p>{DATABASE_URL}</p>
+      {/* <p>{DATABASE_URL}</p> */}
     </div>
   );
 }
