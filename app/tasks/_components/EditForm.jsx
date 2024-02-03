@@ -6,14 +6,8 @@ export default function EditForm({ task }) {
   return (
     <div>
       <form action={editTask} className="">
-        <input type="text" name="id" value={task.id} hidden />
-        <input
-          type="text"
-          required
-          defaultValue={task.content}
-          name="content"
-          className="input input-bordered w-full"
-        />
+        <input type="text" name="id" defaultValue={task.id} hidden />
+        <input type="text" required name="content" className="input input-bordered w-full" />
         <div>
           <label htmlFor="completed" className="label cursor-pointer">
             <span className="label-text">completed</span>

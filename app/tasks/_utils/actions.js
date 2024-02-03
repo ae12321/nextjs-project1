@@ -20,7 +20,7 @@ export const createTask = async (formData) => {
   revalidatePath("/tasks");
 };
 export const createTaskCustom = async (prevState, formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   const content = formData.get("content");
   console.log(prevState);
 
@@ -34,7 +34,7 @@ export const createTaskCustom = async (prevState, formData) => {
       data: { content },
     });
     revalidatePath("/tasks");
-    return { message: "succes" };
+    return { message: "success" };
   } catch (error) {
     return { message: "error" };
   }
