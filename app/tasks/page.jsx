@@ -3,6 +3,8 @@ import TaskForm from "./_components/TaskForm";
 import TaskList from "./_components/TaskList";
 import TaskFormCustom from "./_components/TaskFormCustom";
 
+export const dynamic = "force-dynamic";
+
 export default function TasksPage() {
   return (
     <div>
