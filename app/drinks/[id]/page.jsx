@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -22,10 +23,13 @@ export default async function Drink({ params }) {
   return (
     <div>
       {/* <h1 className="text-5xl">{params.id}</h1> */}
-      <Link href="/drinks">back</Link>
+      <Link href="/drinks" className="btn btn-primary my-8">
+        back
+      </Link>
       <h1>{drinkName}</h1>
       <div>
-        <img src={drinkImage} alt="" className="w-full" />
+        <Image src={drinkImage} alt="" width={300} height={300} />
+        {/* <img src={drinkImage} alt="" className="w-full" /> */}
       </div>
     </div>
   );
