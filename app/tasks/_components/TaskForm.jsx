@@ -1,21 +1,11 @@
 import prisma from "@/utils/db";
 import { revalidatePath } from "next/cache";
 import React from "react";
-
-const handleSubmit = async (formData) => {
-  "use server";
-  const content = formData.get("content");
-  await prisma.task.create({
-    data: {
-      content,
-    },
-  });
-  revalidatePath("/tasks");
-};
+import { createTask } from "../_utils/actions";
 
 export default function TaskForm() {
   return (
-    <form action={handleSubmit} className="border">
+    <form action={createTask} className="border">
       <div className="join m-4">
         <input
           className="join-item input input-bordered w-full px-4"

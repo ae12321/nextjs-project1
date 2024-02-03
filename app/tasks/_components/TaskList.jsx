@@ -20,7 +20,7 @@ export default async function TaskList() {
           className="border rounded-lg p-2 mt-2 shadow-lg flex justify-between items-center"
         >
           <p className={`text-lg ${task.completed ? "line-through" : ""}`}>{task.content}</p>
-          <ButtonForm />
+          <ButtonForm id={task.id} />
         </li>
       ))}
     </ul>
