@@ -1,3 +1,4 @@
+import { DATABASE_URL } from "@/config/environment";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Link href="/help" className="text-xl">
         help page
       </Link>
+      <p>{DATABASE_URL}</p>
     </div>
   );
 }

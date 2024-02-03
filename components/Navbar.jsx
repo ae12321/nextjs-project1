@@ -7,6 +7,7 @@ const links = [
   { href: "/drinks", label: "drinks" },
   { href: "/tasks", label: "tasks" },
   { href: "/query", label: "query" },
+  { href: "/contact", label: "contact" },
 ];
 
 export default function Navbar() {
